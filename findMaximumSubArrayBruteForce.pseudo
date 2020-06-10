@@ -1,0 +1,17 @@
+FIND_MAXIMUM_SUBARRAY_BF(A, low, high)
+    maxSum              = A[low]
+    maxSumLeftIndex     = low
+    maxSumRightIndex    = low
+
+    for left = low to high
+        sum = 0
+
+        for right = left to high
+            sum += A[right]
+
+            if sum > maxSum
+                maxSum = sum
+                maxSumLeftIndex = left
+                maxSumRightIndex = right
+
+    return (maxSumLeftIndex, maxSumRightIndex, maxSum)
